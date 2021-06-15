@@ -1,0 +1,29 @@
+@import '../lib/Vars';
+
+.header{
+    height: 10vh;
+    background-color: $color-grey;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header ul{
+    width: 40vw;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header li{
+    cursor: pointer;
+}
+
+.header_logo{
+    color: $color-black;
+    width: 20vw;
+    height: 70%;
+}
+
