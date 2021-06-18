@@ -1,10 +1,23 @@
-import React from 'react';
-import Footer from './Footer';
+import React, {useContext} from 'react';
+import Product from './Product';
+import '../assets/styles/components/Products.scss'
+import AppContext from '../context/AppContext';
 
-const Layout = () =>(
-        <>
-            <Footer/>
-        </>
-    )
+const Products = () =>{
+    
+    const {state, addToCart} = useContext(AppContext);
+    const {products} = state;
 
-export default Layout
+    const handleAddToCart = product =>{
+        console.log(product)
+        addToCart(product);
+        console.log(state)
+    }
+
+    return(
+        <div className="products_container">
+           { products.map(product => <Product product={product} key={product.id} handleAddToCart={handleAddToCart}/>)}
+        </div>
+    )}
+
+export default Products;
