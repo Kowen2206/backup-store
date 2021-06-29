@@ -45,8 +45,10 @@ margin-bottom: 20px;
 
 .Information_element{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-bottom: solid 1px $color-greyStrong;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
 
 }
 
@@ -55,3 +57,17 @@ margin-bottom: 20px;
     justify-content: space-between;
     margin: 20px 0px;
 }
+
+.Information_next :first-child{
+    background-color: rgba(240, 248, 255, 0);
+    color: $color-black;
+    font-size: 14px;
+}
+
+.Information_back :first-child{
+    background-color: rgba(240, 248, 255, 0);
+    color: $color-black;
+    font-size: 14px;
+
+}
+

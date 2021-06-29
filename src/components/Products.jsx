@@ -9,14 +9,12 @@ const Products = () =>{
     const {products} = state;
 
     const handleAddToCart = product =>{
-        console.log(product)
         addToCart(product);
-        console.log(state)
     }
-
     return(
         <div className="products_container">
-           { products.map(product => <Product product={product} key={product.id} handleAddToCart={handleAddToCart}/>)}
+           { products.map(product => <Product product={product} key={product.id} handleAddToCart={handleAddToCart}/>
+            )}
         </div>
     )}
 

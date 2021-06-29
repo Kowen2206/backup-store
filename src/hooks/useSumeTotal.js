@@ -3,12 +3,8 @@
 const useSumeTotal = () => {
 
     const SumTotal = (array) =>{
-        console.log(array)
-        const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+        const reducer = (accumulator, currentValue) => accumulator + (currentValue.price * currentValue.amount);
         const sum = array.reduce(reducer, 0);
-
-        console.log("sum")
-        console.log(sum)
         return sum;
       }
 

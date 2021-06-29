@@ -2,6 +2,11 @@
 
 .Success{
     width: 100vw;
-    min-height: 40vh;
+    min-height: 80vh;
     @extend %flex-center;
+}
+
+.Success img{
+    width: 300px;
+    height: 300px;
 }

@@ -24,8 +24,9 @@ const Checkout = () => {
             
             <div key={cart.id} className="Checkout_item">
             <div className="Checkout_element">
+              <div className="Checkout_amount">{`${item.amount}`}</div>
               <h4>{item.title}</h4>
-              <span>${item.price}</span>
+              <span>${item.price * item.amount}</span>
             </div>
             <button onClick={() => handleRemove(item)} type="button">Eliminar</button>
           </div>)

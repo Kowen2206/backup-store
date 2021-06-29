@@ -11,12 +11,10 @@ const Information = () => {
   const { cart } = state;
   const history = useHistory();
 
-
   const handleSubmit = () => {
 
     const formData = new FormData(form.current);
 
-    console.log(form.current);
     const buyer = {
       name: formData.get('name'),
       email: formData.get('email'),
@@ -56,7 +54,7 @@ const Information = () => {
         </div>
         <div className="Information_buttons">
           <div className="Information_back">
-            Regresar
+          <button onClick={() => history.push('/Home')} type="button">volver</button>
           </div>
           <div className="Information_next">
             <button onClick={() => handleSubmit()} type="button">Pagar</button>
@@ -68,8 +66,9 @@ const Information = () => {
         {cart.map(item =>
           (<div className="Information_item">
           <div className="Information_element">
-            <h4>{item.title}</h4>
-            <span>${item.price}</span>
+          <div className="Checkout_amount">{`${item.amount}`}</div>
+            <h4>{`${item.title} `}</h4>
+            <span>${item.price * item.amount}</span>
           </div>
         </div>)
         )}

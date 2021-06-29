@@ -1,15 +1,13 @@
 import React from 'react'
-import '../assets/styles/containers/Success.scss'
+import '../assets/styles/containers/Success.scss';
+import success from  '../assets/images/succes.png'
 
 const Succes = () =>(
     <div className="Success">
         <div className="Success-content">
-            <h2>Rafa, Gracias por tu compra</h2>
-            <span>Tu pedido llegara en 3 dias a tu direccion:</span>
-            <div className="Success-map">
-                Google Maps
-            </div>
-        </div>
+        <img src={success} alt="" />
+            <h1>Gracias por tu compra</h1>
+        </div> 
     </div>
 );
 

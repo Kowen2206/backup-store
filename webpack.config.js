@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+require('dotenv').config();
 
 module.exports = {
   entry: './src/index.js',
@@ -39,6 +41,10 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.png/,
+        type: 'asset/resource'
+      }
     ],
   },
 
@@ -50,6 +56,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css',
     }),
+    new webpack.DefinePlugin({
+			'process.env': {
+				'REACT_APP_PAYPAL_CLIENT_ID': JSON.stringify(process.env.REACT_APP_PAYPAL_CLIENT_ID),
+			},
+		}),
   ],
 
   devServer: {
