@@ -3,10 +3,19 @@
 .Success{
     width: 100vw;
     min-height: 80vh;
+    h1{
+        width: 100vw;
+        text-align: center
+    }
     @extend %flex-center;
+    flex-wrap: wrap;
 }
 
 .Success img{
     width: 300px;
     height: 300px;
+}
+
+.succes-button{
+    width: 200px;
 }

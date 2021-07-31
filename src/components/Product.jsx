@@ -4,13 +4,12 @@ const Product = ({product, handleAddToCart}) =>{
     
     
     const handleButtonProduct = () =>{
-        
         handleAddToCart(product)
     }
 
     return(
         <div className="product_item">
-            <img className="product_image" src ={product.image} alt ={product.title}/>
+            <img className="product_image" src ={`${product.image[0].url}`} alt ={product.title}/>
             <div className="product_info_container">
                 <h2 className="product_item_title">
                     {product.title}

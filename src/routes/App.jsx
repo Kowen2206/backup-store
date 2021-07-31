@@ -12,25 +12,29 @@ import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
 const App = () => {
-    
-    const initialState = useInitialState();
 
-    return(
-    <AppContext.Provider value={initialState}>
-    <BrowserRouter>
-        <Layout>
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/home" component={Home} />
-                <Route exact path="/checkout/payment" component={Payment} />
-                <Route exact path="/success" component={Success} />
-                <Route exact path="/CheckOut" component={CheckOut} />
-                <Route exact path="/checkout/information" component={Information} />
-                <Route component={NotFound} />
-            </Switch>
-        </Layout>
-    </BrowserRouter>
-    </AppContext.Provider>
-)
+    const initialState = useInitialState();
+   
+    const isEmpty = Object.keys(initialState.state).length;
+
+    return (
+        <>
+            {isEmpty > 0? (<AppContext.Provider value={initialState}>
+                <BrowserRouter>
+                    <Layout>
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/home" component={Home} />
+                            <Route exact path="/checkout/payment" component={Payment} />
+                            <Route exact path="/success" component={Success} />
+                            <Route exact path="/CheckOut" component={CheckOut} />
+                            <Route exact path="/checkout/information" component={Information} />
+                            <Route component={NotFound} />
+                        </Switch>
+                    </Layout>
+                </BrowserRouter>
+            </AppContext.Provider>) : <h1> Cargando... </h1> }
+        </>
+    );
 }
 export default App;

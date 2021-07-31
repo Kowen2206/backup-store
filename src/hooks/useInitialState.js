@@ -1,9 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 import initialState from "../initialState";
+import config from "../config/config";
+
 
 const useInitialState = () => {
 
+    const API = `${config.api_url}/products`;
     const [state, setState] = useState(initialState);
+    const [products, setProducts] = useState([]);
+ 
+
+    useEffect(() => {
+        axios.get(API)
+        .then(res => setProducts(res.data))
+        .catch(err =>{
+            console.log("error");
+            console.log(err);
+
+        })
+    }, []);
+
 
     const getProductsLength = (productsAmount = 0) =>{
         if(state.cart){
@@ -17,7 +34,7 @@ const useInitialState = () => {
     }
 
     const addToCart = payload => {
-        
+        // to do: agregar el valor boleano countable a los productos para en base a este valor si un producto se puede sumar o no.
         const productExistence = state.cart.find(item => item.id === payload.id);
         if (productExistence) {
             const productIndex = state.cart.indexOf(productExistence);
@@ -98,6 +115,7 @@ const useInitialState = () => {
         addNewOrder,
         addToCartFromSessionStorage,
         removeProductFromSessionStorage,
+        products,
         state
     }
 

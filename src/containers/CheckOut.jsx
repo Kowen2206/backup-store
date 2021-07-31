@@ -9,10 +9,8 @@ const Checkout = () => {
 
   const {state, removeFromCart} = useContext(AppContext);
   const {cart} = state;
-
   const handleRemove = product => removeFromCart(product);
-
- const handleSumTotal = useSumeTotal();
+  const handleSumTotal = useSumeTotal();
 
   return(
       <div className="Checkout">

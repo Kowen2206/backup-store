@@ -7,6 +7,11 @@
     @extend %flex-center;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    @include respond-to-width(500px){
+        flex-wrap: wrap;
+        flex-flow: wrap-reverse;
+        margin-top: 10vh;
+    }
 }
 
 .Information input{
@@ -17,6 +22,10 @@
 
 .Information_content{
     width: 50%;
+    @include respond-to-width(500px){
+        width: 100%;
+        margin-bottom: 10vh;
+    }
 }
 
 .Information_head{
@@ -30,6 +39,11 @@ margin-bottom: 20px;
     @extend %flex-center;
     flex-direction: column;
     justify-content: flex-start;
+    @include respond-to-width(500px){
+        width: 100%;
+        margin-left: 0px;
+        height: auto;
+    }
 
 }
 

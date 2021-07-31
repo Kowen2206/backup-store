@@ -7,7 +7,12 @@
     @extend %flex-center;
     flex-wrap: nowrap;
     margin-left: 20vw;
-    
+    @include respond-to-width(500px){
+        width: 100%;
+        max-height: auto;
+        flex-wrap: wrap;
+        margin-top: 10vh;
+    }
 }
 
 .Checkout_content, .Checkout_sidebar{
@@ -19,6 +24,11 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
+    @include respond-to-width(500px){
+        width: 100%;
+        max-height: 70vh;
+        flex-wrap: wrap;
+    }
 }
 
 
@@ -54,6 +64,9 @@
     justify-content: flex-start;
     justify-content: space-between;
     padding-right: 20%;
+    @include respond-to-width(500px){
+       margin: 10px 0px;
+    }
 }
 
 .Checkout_item button{
