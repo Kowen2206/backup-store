@@ -7,7 +7,7 @@ const Layout = ({children}) =>{
     const {addToCartFromSessionStorage} = useContext(AppContext);
     useEffect(() => {
         addToCartFromSessionStorage()
-    }, []);
+    }, [] );
 
     return(
         <>
