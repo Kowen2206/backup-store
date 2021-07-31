@@ -5,6 +5,7 @@ on:
       - master
 env:
   REACT_APP_PAYPAL_CLIENT_ID: ${{ secrets.REACT_APP_PAYPAL_CLIENT_ID }}
+  REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
 jobs:
   build:
     name: Build

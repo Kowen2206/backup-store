@@ -12,7 +12,7 @@ const Products = () =>{
     }
     return(
         <div className="products_container">
-           { products.map(product => <Product product={product} key={product.id} handleAddToCart={handleAddToCart}/>
+           { products && products.map(product => <Product product={product} key={product.id} handleAddToCart={handleAddToCart}/>
             )}
         </div>
     )}

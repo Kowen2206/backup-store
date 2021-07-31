@@ -105,7 +105,6 @@ const useInitialState = () => {
         window.sessionStorage.removeItem('cart');
         window.sessionStorage.removeItem('productsAmount');
         callback();
-     
     }
 
     return {
