@@ -15,7 +15,7 @@ const useInitialState = () => {
         axios.get(API)
         .then(res => setProducts(res.data))
         .catch(err =>{
-            console.log("error");
+            console.log("error: api");
             console.log(err);
 
         })
