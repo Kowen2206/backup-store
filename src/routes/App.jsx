@@ -9,6 +9,7 @@ import Layout from '../components/Layout';
 import Information from '../containers/Information';
 import AppContext from '../context/AppContext';
 import useInitialState from '../hooks/useInitialState';
+import Preloader from '../components/Preloader';
 import '../assets/styles/App.scss';
 
 const App = () => {
@@ -33,7 +34,7 @@ const App = () => {
                         </Switch>
                     </Layout>
                 </BrowserRouter>
-            </AppContext.Provider>) : <h1> Cargando... </h1> }
+            </AppContext.Provider>) : <Preloader /> }
         </>
     );
 }

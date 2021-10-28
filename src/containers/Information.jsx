@@ -13,7 +13,8 @@ const Information = () => {
   const { cart } = state;
   const history = useHistory();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     const formData = new FormData(form.current);
 
@@ -41,7 +42,7 @@ const Information = () => {
       addToBuyer(buyer);
       history.push('/checkout/payment');
     }else{
-      console.log("debes completar todos los campos")
+      window.alert('Debes completar todos los campos');
       dataComplete = true;
     }
     
@@ -56,7 +57,7 @@ const Information = () => {
           <h2>Informacion de contacto:</h2>
         </div>
         <div className="Information_form">
-          <form ref={form} action="">
+          <form ref={form} action="" onSubmit={(e) => handleSubmit(e)}>
             <input required type="text" placeholder="Nombre completo" name="name" />
             <input required type="email" placeholder="Correo Electronico" name="email" />
             <input required type="text" placeholder="Direccion" name="address" />
@@ -66,15 +67,15 @@ const Information = () => {
             <input required type="text" placeholder="Estado" name="state" />
             <input required type="number" placeholder="Codigo postal" name="cp" />
             <input required type="tel" placeholder="Telefono" name="phone" />
-          </form>
+            <div className="Information_buttons">
+            <div className="Information_back">
+            <button onClick={() => history.push('/Home')} type="button">volver</button>
+            </div>
+            <div className="Information_next">
+              <button type="submit">Pagar</button>
+            </div>
         </div>
-        <div className="Information_buttons">
-          <div className="Information_back">
-          <button onClick={() => history.push('/Home')} type="button">volver</button>
-          </div>
-          <div className="Information_next">
-            <button onClick={() => handleSubmit()} type="button">Pagar</button>
-          </div>
+          </form>
         </div>
       </div>
       <div className="Information_sidebar">

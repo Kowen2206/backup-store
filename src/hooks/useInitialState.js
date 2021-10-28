@@ -17,7 +17,6 @@ const useInitialState = () => {
         .catch(err =>{
             console.log("error: api");
             console.log(err);
-
         })
     }, []);
 

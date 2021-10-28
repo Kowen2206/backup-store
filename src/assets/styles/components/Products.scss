@@ -4,9 +4,10 @@
     width: 100vw;
     min-height: auto;
     margin-bottom: 10vh;
-    @extend %flex-center;
-    justify-content: left;
     padding: 0vw 5vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .product_item{
@@ -14,15 +15,12 @@
     width: 18vw;
     height: auto;
     margin: 100px 0px;
-    margin-left: 7vw;
     @extend %flex-center;
     justify-content: center;
     background-color: $color-white;
     @include respond-to-width(500px){
         width: 70vw;
         height: auto;
-        margin: 10px 0px;
-        margin-left: 10vw;
     }
 }
 
@@ -33,7 +31,6 @@
 .product_image{
     object-fit: contain;
     width: 100%;
-    height: 100%;
 }
 
 .product_item_button{

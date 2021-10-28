@@ -19,9 +19,8 @@ const Header = () =>{
             
             <nav className="header_nav">
                     <ul>
-                        <li>Personajes</li>
-                        <li>Muebles</li>
-                        <li>Otros</li>
+                        <Link to="/"> <li>Home </li></Link>
+                        <Link to="/Checkout"> <li>Carrito </li></Link>
                     </ul>
             </nav>
 
@@ -29,9 +28,8 @@ const Header = () =>{
                 toggle && 
                 <nav className="header_nav_mobile">
                     <ul>
-                        <li>Personajes</li>
-                        <li>Muebles</li>
-                        <li>Otros</li>
+                        <Link to="/"> <li>Home </li></Link>
+                        <Link to="/Checkout"> <li>Carrito </li></Link>
                     </ul>
                 </nav>
             }

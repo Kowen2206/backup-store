@@ -1,6 +1,5 @@
 import React,{useEffect, useContext} from 'react'
 import Header from './Header'
-import Footer from './Footer'
 import AppContext from '../context/AppContext'
 
 const Layout = ({children}) =>{
@@ -13,7 +12,6 @@ const Layout = ({children}) =>{
         <>
             <Header/>
             {children}
-            <Footer/>
         </>
     )}
 

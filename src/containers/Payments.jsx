@@ -10,7 +10,6 @@ import keys from '../utils/keys/keys';
 const Payment = () =>{
     
     useEffect(() => {
-        console.log(process.env)
     }, []);
     // eslint-disable-next-line no-unused-vars
     const { state, addNewOrder } = useContext(AppContext);
